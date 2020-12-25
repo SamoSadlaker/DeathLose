@@ -1,5 +1,6 @@
 package eu.samosadlaker.deathlose.core;
 
+import eu.samosadlaker.deathlose.listeners.DeathListener;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -41,11 +42,17 @@ public class Main extends JavaPlugin {
             return;
         }
 
+        registerListeners();
+
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
         logger.sendMessage(Colors.formatColor("&aPlugin &b" + pdf.getName() + " &asuccessfully enabled"));
         logger.sendMessage(Colors.formatColor("&a" + pdf.getVersion() + " &f| &a" + pdf.getAuthors().toString() + " &f| &a" + pdf.getWebsite() ));
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
+    }
+
+    private void registerListeners(){
+        getServer().getPluginManager().registerEvents(new DeathListener(), this);
     }
 
 
