@@ -1,0 +1,6 @@
+main: eu.samosadlaker.deathlose.core.Main
+name: DeathLose
+api-version: 1.16
+author: SamoSadlaker
+version: 0.1
+website: www.samosadlaker.eu
