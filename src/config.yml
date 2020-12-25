@@ -1,5 +1,7 @@
 prefix: "&7[&5DeathLose&7]"
 
+permission: "voidport.admin"
+
 lose:
   player:
       permission: "deathlose.death.player"
@@ -16,3 +18,5 @@ lose:
 
 
 deathmessage: "&dYou died and you lost &a{@money} &dmoney from your wallet."
+reload-completed: "&dPlugin successfully reloaded"
+command-usage: "&dPlease type &5/deathlose reload"

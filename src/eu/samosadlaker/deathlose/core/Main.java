@@ -1,5 +1,7 @@
 package eu.samosadlaker.deathlose.core;
 
+import eu.samosadlaker.deathlose.commands.Admin;
+import eu.samosadlaker.deathlose.commands.TabCompleter;
 import eu.samosadlaker.deathlose.listeners.DeathListener;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -43,6 +45,8 @@ public class Main extends JavaPlugin {
         }
 
         registerListeners();
+        registerCommands();
+        registerTabCompleter();
 
 
         logger.sendMessage(Colors.formatColor("&b-------------------------------------"));
@@ -53,6 +57,12 @@ public class Main extends JavaPlugin {
 
     private void registerListeners(){
         getServer().getPluginManager().registerEvents(new DeathListener(), this);
+    }
+    private void registerCommands(){
+        getCommand("deathlose").setExecutor(new Admin());
+    }
+    private void registerTabCompleter(){
+        getCommand("deathlose").setTabCompleter(new TabCompleter());
     }
 
 
